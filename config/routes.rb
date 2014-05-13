@@ -1,8 +1,10 @@
 PlanWithFriends::Application.routes.draw do
   resources :events
-  devise_for :users
+  devise_for :users,
+             :controllers => { :registrations => "my_devise/registrations"}
 
   root :to => 'events#new'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
